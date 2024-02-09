@@ -53,15 +53,6 @@ public class StudentController {
 
     }
 
-//    @PostMapping("/students")
-//    @Transactional
-//    public Studentmodel createStudent(@RequestBody Studentmodel student) {
-//
-//        System.out.println(student);
-//        System.out.println("student");
-//        Studentmodel savedStudent = studentRepository.save(student);
-//        return savedStudent;
-//    }
 
 
 }
