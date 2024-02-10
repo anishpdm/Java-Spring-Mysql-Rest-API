@@ -5,6 +5,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,7 @@ public class StudentController {
     private StudentRepository studentRepository;
 
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/viewall")
     @Transactional
     public ResponseEntity<List<Studentmodel>> viewAllStudents() {
@@ -29,6 +31,8 @@ public class StudentController {
     }
 
 
+
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/students")
     @Transactional
     public ResponseEntity<Studentmodel> createStudent(@RequestBody Studentmodel student) {
@@ -37,6 +41,9 @@ public class StudentController {
     }
 
 
+
+
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/login")
     @Transactional
     public ResponseEntity<Map<String, String>> logInStudent(@RequestBody Studentmodel student) {
